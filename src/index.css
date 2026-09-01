@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #eef1f6;
+    --color-surface: #ffffff;
+    --color-card: #ffffff;
+    --color-border: #d5dbe6;
+    --color-border-strong: #b8c0cf;
+    --color-ink: #0b1628;
+    --color-muted: #5a6a7f;
+    --color-accent: #0c2340;
+    --color-accent-soft: #e4ecf6;
+    --color-accent-fg: #ffffff;
+    --color-critical: #c62828;
+    --color-critical-soft: #fdecea;
+    --color-critical-border: #ef9a9a;
+    --color-warn: #e65100;
+    --color-warn-soft: #fff3e0;
+    --color-warn-border: #ffb74d;
+    --color-calm: #1565c0;
+    --color-calm-soft: #e3f2fd;
+    --color-calm-border: #90caf9;
+    --color-ok: #1b7a4a;
+    --color-ok-soft: #e8f5e9;
+    --color-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px rgb(15 23 42 / 0.06);
+    color-scheme: light;
+  }
+
+  .dark {
+    --color-bg: #0a0e14;
+    --color-surface: #121820;
+    --color-card: #161d28;
+    --color-border: #2d3848;
+    --color-border-strong: #445266;
+    --color-ink: #f1f5f9;
+    --color-muted: #9aa8bc;
+    /* Keep accent saturated so buttons stay readable */
+    --color-accent: #3b82f6;
+    --color-accent-soft: #1a2740;
+    --color-accent-fg: #ffffff;
+    --color-critical: #f87171;
+    --color-critical-soft: #3b1518;
+    --color-critical-border: #7f1d1d;
+    --color-warn: #fb923c;
+    --color-warn-soft: #3b2710;
+    --color-warn-border: #9a3412;
+    --color-calm: #60a5fa;
+    --color-calm-soft: #0f1f33;
+    --color-calm-border: #1e3a5f;
+    --color-ok: #4ade80;
+    --color-ok-soft: #12301f;
+    --color-shadow: 0 1px 2px rgb(0 0 0 / 0.35), 0 12px 28px rgb(0 0 0 / 0.35);
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+
+  /* Form controls inherit theme */
+  input, select, textarea, button {
+    color-scheme: inherit;
+  }
+}
+
+@layer utilities {
+  .shadow-card {
+    box-shadow: var(--color-shadow);
+  }
+
+  .urgency-rail-critical {
+    box-shadow: inset 4px 0 0 var(--color-critical);
+  }
+  .urgency-rail-urgent {
+    box-shadow: inset 4px 0 0 var(--color-warn);
+  }
+  .urgency-rail-calm {
+    box-shadow: inset 4px 0 0 var(--color-calm);
+  }
+
+  .bg-page {
+    background-color: var(--color-bg);
+    background-image:
+      radial-gradient(ellipse 90% 50% at 50% -10%, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent),
+      linear-gradient(180deg, transparent, var(--color-bg));
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 4px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
