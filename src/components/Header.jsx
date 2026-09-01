@@ -22,9 +22,13 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-md border-b border-line shadow-sm">
       <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-        <div className="min-w-0 flex items-center gap-3">
-          <div className="w-9 h-9 rounded-lg bg-accent text-accent-fg flex items-center justify-center font-display font-bold text-sm shrink-0 shadow-sm">
-            P
+        <div className="min-w-0 flex items-center gap-2.5">
+          <div className="h-9 px-2 rounded-lg bg-surface border border-line flex items-center justify-center shrink-0 shadow-sm">
+            <img
+              src="./logo.png"
+              alt="PulseLine Logo"
+              className="h-5 w-auto object-contain dark:invert dark:brightness-125"
+            />
           </div>
           <div className="min-w-0">
             <div className="flex items-baseline gap-2">
